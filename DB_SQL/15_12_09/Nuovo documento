@@ -1,0 +1,46 @@
+Funzioni sulla data:
+
+select cognome, nome, DAYNAME(data_nascita) as nomeGiorno, 
+DAYOFMONTH(data_nascita) as giorno, 
+MONTHNAME(data_nascita) as meseNome, 
+MONTH(data_nascita) as mese, 
+YEAR(data_nascita) as anno from utente;
++----------+---------+------------+--------+----------+------+------+
+| cognome  | nome    | nomeGiorno | giorno | meseNome | mese | anno |
++----------+---------+------------+--------+----------+------+------+
+| Galilei  | Galileo | Wednesday  |      8 | January  |    1 | 1564 |
+| Newton   | Isaac   | Sunday     |      4 | January  |    1 | 1643 |
+| Einstein | Albert  | Friday     |     14 | March    |    3 | 1879 |
+| Feynman  | Richard | Saturday   |     11 | May      |    5 | 1918 |
++----------+---------+------------+--------+----------+------+------+
+4 rows in set (0.00 sec)
+
+Es. sulla sintassi deglio operatori logici:
+(calcola chi è nato in primavera)
+
+select cognome, nome, DAYOFMONTH(data_nascita) as giorno, MONTH(data_nascita) as mese, YEAR(data_nascita) as anno from utente 
+where ((month(data_nascita)=3) and (dayofmonth(data_nascita)>22)) 
+or (month(data_nascita)=4) 
+or (month(data_nascita)=5) 
+or ((month(data_nascita)=6) and (dayofmonth(data_nascita)<21));
++---------+---------+--------+------+------+
+| cognome | nome    | giorno | mese | anno |
++---------+---------+--------+------+------+
+| Feynman | Richard |     11 |    5 | 1918 |
++---------+---------+--------+------+------+
+1 row in set (0.00 sec)
+
+Traduzione della data in stringhe:
+(calcola chi è nato in primavera)
+
+select cognome, nome, DAYOFMONTH(data_nascita) as giorno, 
+MONTH(data_nascita) as mese, YEAR(data_nascita) as anno from utente 
+where right(data_nascita, 5) between "03-20" and "06-21";
++---------+---------+--------+------+------+
+| cognome | nome    | giorno | mese | anno |
++---------+---------+--------+------+------+
+| Feynman | Richard |     11 |    5 | 1918 |
++---------+---------+--------+------+------+
+1 row in set (0.00 sec)
+
+
