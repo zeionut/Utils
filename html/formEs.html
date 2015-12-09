@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+
+	<head>
+
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+		<title>Esercizaioni form</title>
+
+		<meta name="description" content="ancore" />
+
+		<meta name="keywords" content=" ..." />
+
+	</head>
+
+	<body>
+		
+		<form id="Esercitazione"method="post" action="mailto:zeionut@yahoo.it">
+
+			<!-- inserimento testo -->
+			<lable>*Nome:</label> 
+			<input type="text" name="nome" value="inserisci il nome..." maxlength="10" 
+			size="15" autofocus autocomplete="on" required="required" />
+
+			<label>*Cognome:</label>
+			<input type="text" name="Cognome" placeholder="inserisci il cognome..." maxlength="10" 
+			size="15" autocomplete="on" required="required" />
+			
+			<br />
+		
+			<!-- inserimento pwd -->
+			<label>*Password:</label>
+			<input type="password" name="password" placeholder="inserisci il password..." maxlength="6" 
+			size="6" autocomplete="on" required="required" />
+
+			<br />
+		
+			<!-- inserimento date -->
+			<label>*Data di Nascita:</label>
+			<input type="date" name="data" autocomplete="on" required="required" />
+
+			<br />
+
+			<!-- inserimento email -->
+			<label>*Email:</label>
+			<input type="email" name="email" required="required" />
+
+			<br />
+		
+			<!-- inserimento colore -->
+			<label>*Colore:</label>
+			<input type="color" name="color" required="required" />
+
+			<br />
+		
+			<!-- inserimento file -->
+			<label>*Inserisci un file:</label>
+			<input type="file" name="file" required="required" />
+
+			<br />
+		
+			<!-- inserimento valore da barra -->
+			<label>*Quanto hai male:</label>
+			0 <input type="range" name="range" required="required" /> 100
+
+			<br />
+		
+			<!-- inserimento testo non editabile -->
+			<label>*Paese:</label>
+			<input type="text" name="Italia" value="Italia" size="6" readonly />
+
+			<br />
+
+			<!-- inserimento opzioni univoche -->
+			Inserisci il genere:<br />
+			<label>Mascio</label>
+			<input type="radio" name="genere" value="M" required="required"/>
+			
+			<label>femmina</label>
+			<input type="radio" name="genere" value="F" required="required" checked="checked" />
+
+			<br />
+
+			<!-- inserimento opzioni multiple -->
+			Il tuoi animali domestici:<br />
+			<label>cane</label>
+			<input type="checkbox" name="animali" value="cane" />
+			
+			<label>gatto</label>
+			<input type="checkbox" name="animali" value="gatto" />
+
+			<label>pesce</label>
+			<input type="checkbox" name="animali" value="pesce" />
+
+			<br />
+		
+			<!-- inserimento numero -->
+			<label>Numero:</label>
+			<input type="number" name="numero" min="0" max="10" />
+
+			<br />
+		
+			<!-- inserimento menù a tendina -->
+			<label>Stato:</label>
+			<select name="Stato">
+				<optgroup label="Europa">
+					<option value="IT" selected="selected">Italia</option>
+					<option value="FR">Francia</option>
+					<option value="GR">Germania</option>
+					<option value="AU">Austria</option>
+					<option value="SP">Spagna</option>
+					<option value="PR">Portogallo</option>
+				</optgroup>
+				<optgroup label="America">
+					<option value="AS">USA</option>
+					<option value="CA">Canada</option>
+					<option value="MX">Messico</option>
+				</optgroup>
+			</select>
+
+			<br />
+
+			<!-- inserimento inserimento testo -->
+			<textarea name="area" rows="20" cols="60"> </textarea>
+
+			<br />
+			<br />
+
+			<input type="submit" name="invia" value="Invia modulo" />
+
+			<input type="reset" name="cancella" value="Ripristina campi" />
+
+			<br />
+			<br />
+			<br />
+
+			<center><input type="image" src="img/riccio.jpg" alt="invia modulo" /></center>
+
+		</form>
+
+	</body>
+
+</html>
+

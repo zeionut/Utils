@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+
+	<head>
+
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+		<title>Esercizaioni form</title>
+
+		<meta name="description" content="ancore" />
+
+		<meta name="keywords" content=" ..." />
+
+	</head>
+
+	<body>
+		<form id="Esercitazione"method="post" action="mailto:zeionut@yahoo.it">
+
+			<table>
+
+				<tr>
+					<td><label>Nome:</label></td>
+					<td><input type="text" name="nome" autofocus autocomplete="on" required="required" /></td>
+				</tr>
+
+				<tr>
+					<td><label>Cognome:</label></td>
+					<td><input type="text" name="Cognome" autocomplete="on" required="required" /></td>
+				</tr>
+
+				<tr>
+					<td><label>Seleziona il prodotto scelto:</label></td>
+					<td>			<select name="Stato">
+						<optgroup label="LATTE">
+							<option value="latSoja">Latte di soja</option>
+							<option value="LatDig">Latte ad alta digiribilit&agave;</option>
+						</optgroup>
+						<optgroup label="DOLCI">
+							<option value="BudSoja">Budino di soja</option>
+							<option value="PanSoja">Panna cotta di soja</option>
+						</optgroup>
+					</select></td>
+				</tr>
+
+				<tr>
+					<td><label>Indica la modalit&agrave; di pagamento:</label></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<td><label>Bonifico bancario</label></td>
+					<td><input type="checkbox" name="pagamento" value="bonifico" /></td>
+				</tr>
+
+				<tr>
+					<td><label>Bolletino Postale</label></td>
+					<td><input type="checkbox" name="pagamento" value="bollettino" /></td>
+				</tr>
+
+				<tr>
+					<td><label>Contrassegno</label></td>
+					<td><input type="checkbox" name="pagamento" value="contrassegno" /></td>
+				</tr>
+
+				<tr>
+					<td><label>Note:</label></td>
+					<td><textarea name="area" rows="5" cols="40"> </textarea></td>
+				</tr>
+
+				<tr>
+					<td><input type="reset" name="cancella" value="Ripristina campi" /></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<td><input type="image" src="img/riccio.jpg" alt="invia modulo" /></td>
+					<td></td>
+				</tr>
+
+			</table>
+		</form>
+
+	</body>
+
+</html>
+

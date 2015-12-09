@@ -1,0 +1,71 @@
+SELECT provincia.nome, ROUND(provincia.abitanti/provincia.superficie,2) FROM provincia ORDER BY provincia.abitanti/provincia.superficie;
+
+SELECT concat(provincia.nome,"(",provincia.sigla,")") FROM provincia ORDER BY provincia.nome;
+
+SELECT concat("Il sig. ",  LPAD(utente.nome,1,""),".", " ", utente.cognome) FROM utente;
+SELECT concat("Il sig. ",  SUBSTRING(utente.nome,1,1),".", " ", utente.cognome) FROM utente;
+SELECT concat("Il sig. ",  LEFT(utente.nome,1),".", " ", utente.cognome) FROM utente;
++-----------------------------------------------------------------------+
+| concat("IL sig.", " ",  LEFT(utente.nome,1),".", " ", utente.cognome) |
++-----------------------------------------------------------------------+
+| Il sig. G. Galilei                                                    |
+| Il sig. I. Newton                                                     |
+| Il sig. A. Einstein                                                   |
+| Il sig. R. Feynman                                                    |
++-----------------------------------------------------------------------+
+4 rows in set (0.00 sec)
+
+SELECT concat("IL sig.", " ",  LEFT(utente.nome,1),".", " ", utente.cognome, " il ", utente.data_nascita) FROM utente;
+
+mysql> SELECT concat_ws(" ", "IL sig.", concat(LEFT(utente.nome,1), "."), utente.cognome, "nato il", utente.data_nascita) FROM utente;
++-------------------------------------------------------------------------------------------------------------+
+| concat_ws(" ", "IL sig.", concat(LEFT(utente.nome,1), "."), utente.cognome, "nato il", utente.data_nascita) |
++-------------------------------------------------------------------------------------------------------------+
+| IL sig. G. Galilei nato il 1564-01-08                                                                       |
+| IL sig. I. Newton nato il 1643-01-04                                                                        |
+| IL sig. A. Einstein nato il 1879-03-14                                                                      |
+| IL sig. R. Feynman nato il 1918-05-11                                                                       |
++-------------------------------------------------------------------------------------------------------------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT "string1" + "string2";
++-----------------------+
+| "string1" + "string2" |
++-----------------------+
+|                     0 |
++-----------------------+
+1 row in set, 2 warnings (0.00 sec)
+
+mysql> SHOW WARNINGS;
++---------+------+---------------------------------------------+
+| Level   | Code | Message                                     |
++---------+------+---------------------------------------------+
+| Warning | 1292 | Truncated incorrect DOUBLE value: 'string1' |
+| Warning | 1292 | Truncated incorrect DOUBLE value: 'string2' |
++---------+------+---------------------------------------------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT CONCAT(UPPER(LEFT(articolo.descrizione,1)), LOWER(SUBSTRING(articolo.descrizione FROM 2))) FROM articolo limit 10;
++--------------------------------------------------------------------------------------------+
+| CONCAT(UPPER(LEFT(articolo.descrizione,1)), LOWER(SUBSTRING(articolo.descrizione FROM 2))) |
++--------------------------------------------------------------------------------------------+
+| Segnafili lettere u                                                                        |
+| Segnafili lettere t                                                                        |
+| Segnafili lettere s                                                                        |
+| Segnafili lettere r                                                                        |
+| Toner tk kyocera mita tk 110 - fax                                                         |
+| Divisori colorati 12 card - rubriche esselte                                               |
+| Adattatore spina 10a schuko                                                                |
+| Bipresa volante 2p.+t 10/16a                                                               |
+| Portapiedini neon                                                                          |
+| Adattatore multiple 16a                                                                    |
++--------------------------------------------------------------------------------------------+
+10 rows in set (0.00 sec)
+
+
+
+
+
+
+
+
