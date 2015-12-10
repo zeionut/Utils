@@ -1,5 +1,6 @@
 <?php
 	include "funz.php";
+	// per chiriamare una altro file php
 
 	$name="clementoni";
 	
