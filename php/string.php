@@ -1,6 +1,6 @@
 <?php
 	
-	$name="filippo";
+	$name="clementoni";
 	
 	$let=strlen($name);
 
