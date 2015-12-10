@@ -27,19 +27,26 @@
 				echo $var[$i];
 	
 			}
+
 		return $var;	
 
 	}
 
-	$name="clementoni";
+	function ribStr($var) {
 	
-	$num=6;
+			$let="";
 
-	echo "<br />";
+			for ($i=strlen($var)-1; $i>=0; $i--) {
 
-	echo increUno($num);
+				$let=$let.$var[$i];
 
-	echo "<br />";
+				// il . concatena le stringe
+	
+			}
 
-	ribString($name);
+		return $let;	
+
+	}
+
+
 ?>
