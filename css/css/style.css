@@ -1,0 +1,28 @@
+.cosa {
+	background-color:red;
+}
+.cosaNew {
+	background-color:yellow;
+}
+.new {
+	background-color:blue;
+	position:relative;
+	top:20px;
+	left:30px;
+}
+		
+.cosaAs {
+	background-color:green;
+	position:absolute;
+	top:20px;
+	left:30px;
+	height:200px;
+	width:200px;
+}
+	
+p {
+	color:red;
+	position:relative;
+	top:40px;
+	left:10px;
+}

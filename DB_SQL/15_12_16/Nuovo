@@ -1,0 +1,75 @@
+select id from utente where login="galy" and password=md5("1564");
+
+//come effettuare un login
+__________________________________________________________________________________
+
+select count(*) from articolo;
+select count(id) from articolo;
++-----------+
+| count(id) |
++-----------+
+|      9486 |
++-----------+
+1 row in set (0.00 sec)
+
+select min(data_nascita) as piuVecchio, max(data_nascita) as piuGiovane from utente;
++------------+------------+
+| piuVecchio | piuGiovane |
++------------+------------+
+| 1564-01-08 | 1918-05-11 |
++------------+------------+
+1 row in set (0.01 sec)
+
+select round(sum(quantita*prezzo),2) as magazzinoTotale from articolo;
++-----------------+
+| magazzinoTotale |
++-----------------+
+|       664722.53 |
++-----------------+
+1 row in set (0.01 sec)
+
+select round(sum(superficie),2) as superficieTotale, sum(abitanti) as abitantiTotali, sum(comuni) as comuniTotali from provincia;
++------------------+----------------+--------------+
+| superficieTotale | abitantiTotali | comuniTotali |
++------------------+----------------+--------------+
+|        301328.44 |       60045068 |         8100 |
++------------------+----------------+--------------+
+1 row in set (0.00 sec)
+
+mysql> select concat_ws("+-",round(avg(superficie),2),round(std(superficie),2)) as "[media]+-[deviazione]" from provincia;
++-----------------------+
+| [media]+-[deviazione] |
++-----------------------+
+| 2739.35+-1578.72      |
++-----------------------+
+1 row in set (0.00 sec)
+
+select concat(round(avg(superficie),2), "+-" ,round(std(superficie),2)) as "superficie[media]+-[deviazione]", 
+concat(round(avg(abitanti),2), "+-" ,round(std(abitanti),2)) as "abitanti[media]+-[deviazione]", 
+concat(round(avg(comuni),2), "+-" ,round(std(comuni),2)) as "comuni[media]+-[deviazione]" from provincia;
++---------------------------------+-------------------------------+-----------------------------+
+| superficie[media]+-[deviazione] | abitanti[media]+-[deviazione] | comuni[media]+-[deviazione] |
++---------------------------------+-------------------------------+-----------------------------+
+| 2739.35+-1578.72                | 545864.25+-590141.89          | 73.64+-55.26                |
++---------------------------------+-------------------------------+-----------------------------+
+1 row in set (0.00 sec)
+
+select GROUP_CONCAT(nome order by nome desc separator "|") from regione;
+
+select group_concat(distinct settore order by settore) from articolo;
++--------------------------------------------------------------------------------------------------------------+
+| group_concat(distinct settore order by settore)                                                              |
++--------------------------------------------------------------------------------------------------------------+
+| Altro,Cancelleria,Elettrico,Elettrico-Elettronico,Falegnameria,Informatica,Informatico,Meccanico,Ristorativo |
++--------------------------------------------------------------------------------------------------------------+
+1 row in set (0.01 sec)
+
+select group_concat(cognome," ",nome," ",data_nascita) from utente;
++----------------------------------------------------------------------------------------------------------+
+| group_concat(cognome," ",nome," ",data_nascita)                                                          |
++----------------------------------------------------------------------------------------------------------+
+| Galilei Galileo 1564-01-08,Newton Isaac 1643-01-04,Einstein Albert 1879-03-14,Feynman Richard 1918-05-11 |
++----------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+

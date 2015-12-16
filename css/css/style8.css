@@ -1,0 +1,35 @@
+div {
+	padding:5px;
+}
+
+.divCor {
+	background-color:orange;
+	position:absolute;
+	top:0;
+	left:25%;
+	right:25%;
+	height:800px;
+	font-size:10px;
+}
+
+.divRed {
+	background-color:tomato;
+	color:white;
+	position:relative;
+	top:100px;
+	left:5%;
+	width:200px;
+	font-size:12px;
+}
+
+.divWhite {
+	background-color:white;
+	border:2px solid black;
+	position:relative;
+	top:-90px;
+	left:50%;
+	height:400px;
+	width:180px;
+	font-size:12px;
+	font-style:italic;
+}
