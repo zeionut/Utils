@@ -33,6 +33,21 @@
 		}
 		
 	}
-
+	
+	class UtenteExstend extends Utente {
+		
+		public $numCel;
+		
+		public function stampTutto() {
+			
+			$n=parent::stampTutto();
+			$n=$n.$this->numCel;
+			$n=$n."<br />";
+			
+			return $n;
+			
+		}
+		
+	}
 
 ?>

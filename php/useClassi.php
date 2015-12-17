@@ -18,8 +18,13 @@
 			</tr>			
 			
 			<tr>
-				<td><label>Telefono:</label></td>	
-				<td><input type="text" name="tel" placeholder="inserisci il Telefono..." /></td>
+				<td><label>Telefono fisso:</label></td>	
+				<td><input type="text" name="tel" placeholder="inserisci il numero telefonico..." /></td>
+			</tr>
+			
+			<tr>
+				<td><label>Telefono cellulare:</label></td>	
+				<td><input type="text" name="numCel" placeholder="inserisci il numero telefonico..." /></td>
 			</tr>			
 		</table>
 		
@@ -35,14 +40,15 @@
 
 	include "libClassi.php";
 
-	if (isset($_POST["nome"]) && isset($_POST["cognome"]) && isset($_POST["indirizzo"]) && isset($_POST["tel"]) ) {
+	if (isset($_POST["nome"]) && isset($_POST["cognome"]) && isset($_POST["indirizzo"]) && isset($_POST["tel"]) && isset($_POST["numCel"]) ) {
 		
-		$utente = new Utente();
+		$utente = new UtenteExstend();
 		
 		$utente->nome=$_POST["nome"];
 		$utente->cognome=$_POST["cognome"];
 		$utente->indirizzo=$_POST["indirizzo"];
-		$utente->tel=$_POST["tel"];		
+		$utente->tel=$_POST["tel"];
+		$utente->numCel=$_POST["numCel"];	
 		
 		echo "<center><h1>";
 		echo $utente->stampTutto();
