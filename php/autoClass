@@ -1,0 +1,30 @@
+<?php
+
+	class Automobile {
+		
+			public ruotaAntDx;
+			public ruotaAntSX;
+			public ruotaPostDx;
+			public ruotaPostSx;
+		
+		
+		function __construct() {
+		
+			$this->ruotaAntDx= new Ruota();
+			$this->ruotaAntSX= new Ruota();
+			$this->ruotaPostDx= new Ruota();
+			$this->ruotaPostSx= new Ruota();
+		
+		}
+	
+	
+	}
+	
+	class Ruota {
+		
+		public press;
+		
+	}
+
+
+?>

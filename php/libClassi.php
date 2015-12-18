@@ -4,8 +4,6 @@
 
 	class Utente {
 		
-		//classe che a solo proprietà senza metodi
-		
 		public $nome;
 		public $cognome;
 		public $indirizzo;
@@ -33,6 +31,8 @@
 		}
 		
 	}
+	
+	//definire una classe estesa, che eredita le variabili e i metodi dalla classe che estende
 	
 	class UtenteExstend extends Utente {
 		
