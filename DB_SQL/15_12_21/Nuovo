@@ -1,0 +1,31 @@
+insert into allievo(cognome,nome,data_nascita) values("Cocchia", "Filippo", "1985-05-25");
+
+insert into squadra values(null, "Cagliari Calcio", "Stadio Sant'Elia", "Cagliari", 1920, 1, "Rastelli", "Giulini");
+
+update allievo set data_nascita=("1985-05-25") where id=7;
+
+update giocatore set altezza=altezza+0.01, peso=peso-1 where id=3;
+
+
+//cambia tutti i capi "altezza" e "peso" di tutti i record per indicare che l'operazione è voluta e non è 
+//un errore si mette una operazione sempre vera "where 1"
+
+update giocatore set altezza=altezza+0.01, peso=peso-1 where 1;
+
+
+
+//cancella tutti i record
+
+delete from nomeTabella;
+
+//cancella tutti i record dove si verifica la condizione
+//se mettiamo come condizione una chiave primaria cancelleremo 1 o 0 record
+
+delete from nomeTabella where condizione;
+
+//relazioni
+
+select * from provincia join regione on provincia.regione=regione.id;
+
+
+
