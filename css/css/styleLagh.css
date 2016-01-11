@@ -3,6 +3,7 @@
 	width:80%;
 	margin:0 auto;
 	border:2px solid #D630FF;
+	
 }
 
 .header{
@@ -12,12 +13,14 @@
 	font-family:Arial, Verdana, serif;
 	text-align:center;
 	font-weight:bold;
+	
 }
 
 .header img{
 
 	position:relative;
 	vertical-align:middle;
+	
 }
 
 .menu{
@@ -25,6 +28,7 @@
 	color:black;
 	list-style-type:none;
 	text-align:center;
+	
 }
 
 .menu li{
@@ -37,24 +41,28 @@
 	display:inline;
 	padding:15px;
 	background-color:#D630FF;
+	
 }
 
 .menu li:hover{
 
 	background-color:#59FF45;
 	border-left:10px solid #D630FF;
+	
 }
 
 .menu li.active{
 
 	background-color:#59FF45;
 	border-left:10px solid #D630FF;
+	
 }
 
 .menu li.active:hover{
 
 	background-color:#D630FF;
 	border-left:10px solid #59FF45;
+	
 }
 
 .menu li a{
@@ -63,6 +71,7 @@
 	color:white;
 	font-weight:bold;
 	text-decoration:none;
+	
 }
 
 .menu li a:hover{
@@ -83,12 +92,14 @@
 
 .content h1{
 
-	margin-left:20px;
+	margin-left:220px;
+	
 }
 
 .content p{
 
-	margin-left:40px;
+	margin-left:220px;
+	
 }
 
 .footer{
@@ -100,11 +111,13 @@
 	text-align:center;
 	font-weight:bold;
 	padding:5px;	
+	
 }
 
 .footer a:hover{
 
 	color:red;
+	
 }
 
 .asd{
@@ -112,6 +125,7 @@
 	position:relative;
 	top:10px;
 	left:-25px;
+	
 }
 
 .asd2{
@@ -119,5 +133,20 @@
 	position:relative;
 	top:10px;
 	left:25px;
+	
+}
+
+.colonna {
+
+	float:left;
+	width:14em;
+	background-color:red;
+	top:60px;
+	padding:2px;
+	margin:2px;
+	margin-left:6px;
+	position:relative;
+	height:300px;
+
 }
 
