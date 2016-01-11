@@ -8,7 +8,7 @@
 body {
 
 	font-size:14px;
-	/*background:url(img/siteBackground.png) repeat;*/
+	/*background:url(../img/siteBackground.png) repeat;*/
 	margin:0;
 	padding:0;
 	color:#707070;
@@ -60,6 +60,7 @@ body {
 	padding:17px 0;
 	height:18px;
 	background-color:black;
+	margin-bottom:5px;
 
 }
 
@@ -89,7 +90,6 @@ body {
 	text-transform:uppercase;
 	background:url(../img/menuActive.jpg) repeat-x;
 
-
 }
 
 #navContainer #active a {
@@ -103,10 +103,52 @@ body {
 
 }
 
+#threeBoxes {
 
+	padding:15px;
+	height:180px;
 
+}
 
+h2 {
+	color:red;
+	padding: 10px 0 20 px 0;
+	
+}
 
+.box {
+
+	float:left;
+	width:25%;
+	padding:10px 35px;
+	background-color:#e9e9e9;
+
+}
+
+.bottonLink {
+
+	background-color:red;
+	color:white;
+	padding:5px 10px;
+	margin:10px 0;
+	text-decoration:none;
+	border-bottom:solid 2px white;
+	display:inline-block;
+
+}
+
+h3 {
+
+	color:red;
+	padding:10px 0 20px 0;
+	
+}
+
+.containLeft {
+
+	text-align:justify;
+
+}
 
 
 
