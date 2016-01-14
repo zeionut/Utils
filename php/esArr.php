@@ -1,12 +1,11 @@
 <html>
 		<?php
 			
-			include "classNum.php";
+			include "classArr.php";
 			
-			$num1=new Num(null);
-			$num2=new Num(null);
+			$arr=new Arr(null);
 			
-			if (isset($_POST["input1"]) and isset($_POST["input2"])) {
+			/*if (isset($_POST["input1"]) and isset($_POST["input2"])) {
 		
 				$num1 = new Num($_POST["input1"]);
 				$num2 = new Num($_POST["input2"]);
@@ -14,13 +13,13 @@
 				//$num1 -> setN($_POST["input1"]);
 				//$num2 -> setN($_POST["input2"]);
 		
-			}
+			}*/
 				
 		?>
 	
 	<form method="POST">
 		
-		<?php
+		<?php/*
 			
 			if (isset($_POST["cancella"])) {
 				
@@ -38,15 +37,15 @@
 				
 		?>
 		
-				<input type="number" name="input1" value="<?php $num1->stampN(); ?>" />
+				<input type="number" name="input1" value="<?php echo $num1->stampN(); ?>" />
 		
-				<input type="number" name="input2" value="<?php $num2->stampN(); ?>" />
+				<input type="number" name="input2" value="<?php echo $num2->stampN(); ?>" />
 				
 		<?php
 				
 			}
 			
-		?>
+		*/?>
 		
 		<br />
 		

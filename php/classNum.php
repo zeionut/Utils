@@ -36,7 +36,15 @@
 			
 		}
 		
-		
+		public function sconto(Num $n) {
+				
+				$sconto = $this -> n * $n -> getN() / 100;
+				
+				$prezzoN = $this -> n - $sconto;
+				
+				return new Num($prezzoN);	
+			
+		}		
         
 	}
 	
