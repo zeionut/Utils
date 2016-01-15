@@ -1,0 +1,212 @@
+select settore, count(*) from articolo group by settore;
++-----------------------+----------+
+| settore               | count(*) |
++-----------------------+----------+
+| Altro                 |       52 |
+| Cancelleria           |      361 |
+| Elettrico             |      625 |
+| Elettrico-Elettronico |     2180 |
+| Falegnameria          |     1294 |
+| Informatica           |        1 |
+| Informatico           |        3 |
+| Meccanico             |     4611 |
+| Ristorativo           |      359 |
++-----------------------+----------+
+9 rows in set (0.00 sec)
+
+//ordina per la seconda colonna (order by 2)
+
+select settore, count(*) from articolo group by settore order by 2;
++-----------------------+----------+
+| settore               | count(*) |
++-----------------------+----------+
+| Informatica           |        1 |
+| Informatico           |        3 |
+| Altro                 |       52 |
+| Ristorativo           |      359 |
+| Cancelleria           |      361 |
+| Elettrico             |      625 |
+| Falegnameria          |     1294 |
+| Elettrico-Elettronico |     2180 |
+| Meccanico             |     4611 |
++-----------------------+----------+
+9 rows in set (0.03 sec)
+
+select settore, count(*) as articoli, round(prezzo*quantita,2) as valore from articolo group by settore order by 3;
++-----------------------+----------+---------+
+| settore               | articoli | valore  |
++-----------------------+----------+---------+
+| Elettrico             |      625 |   13.84 |
+| Cancelleria           |      361 |   20.00 |
+| Altro                 |       52 |   20.00 |
+| Falegnameria          |     1294 |   37.40 |
+| Elettrico-Elettronico |     2180 |   45.60 |
+| Meccanico             |     4611 |   61.20 |
+| Ristorativo           |      359 |  117.72 |
+| Informatico           |        3 |  960.00 |
+| Informatica           |        1 | 3893.92 |
++-----------------------+----------+---------+
+9 rows in set (0.02 sec)
+
+select settore, count(*) as articoli, round(sum(prezzo*quantita)) as valore from articolo group by settore order by 3;
++-----------------------+----------+--------+
+| settore               | articoli | valore |
++-----------------------+----------+--------+
+| Altro                 |       52 |   2112 |
+| Informatico           |        4 |   4994 |
+| Ristorativo           |      359 |  11048 |
+| Cancelleria           |      361 |  14625 |
+| Falegnameria          |     1294 |  38701 |
+| Elettrico             |      625 | 102059 |
+| Meccanico             |     4611 | 223110 |
+| Elettrico-Elettronico |     2180 | 268073 |
++-----------------------+----------+--------+
+8 rows in set (0.03 sec)
+
+//media con AVG non sempre precisa quando parla coinvolge i raggruppamenti di più oggetti
+
+select settore, count(*) as articoli, round(sum(prezzo*quantita)) as valore, round(avg(prezzo*quantita)) as media 
+from articolo group by settore order by 3;
++-----------------------+----------+--------+-------+
+| settore               | articoli | valore | media |
++-----------------------+----------+--------+-------+
+| Altro                 |       52 |   2112 |    41 |
+| Informatico           |        4 |   4994 |  1248 |
+| Ristorativo           |      359 |  11048 |    31 |
+| Cancelleria           |      361 |  14625 |    41 |
+| Falegnameria          |     1294 |  38701 |    30 |
+| Elettrico             |      625 | 102059 |   163 |
+| Meccanico             |     4611 | 223110 |    48 |
+| Elettrico-Elettronico |     2180 | 268073 |   123 |
++-----------------------+----------+--------+-------+
+8 rows in set (0.04 sec)
+
+select settore, count(*) as articoli, round(sum(prezzo*quantita)) as valore, round(sum(prezzo*quantita)/count(*)) as media 
+from articolo group by settore order by 3;
++-----------------------+----------+--------+-------+
+| settore               | articoli | valore | media |
++-----------------------+----------+--------+-------+
+| Altro                 |       52 |   2112 |    41 |
+| Informatico           |        4 |   4994 |  1248 |
+| Ristorativo           |      359 |  11048 |    31 |
+| Cancelleria           |      361 |  14625 |    41 |
+| Falegnameria          |     1294 |  38701 |    30 |
+| Elettrico             |      625 | 102059 |   163 |
+| Meccanico             |     4611 | 223110 |    48 |
+| Elettrico-Elettronico |     2180 | 268073 |   123 |
++-----------------------+----------+--------+-------+
+8 rows in set (0.03 sec)
+
+select regione.nome, count(*) as numeroProvincie, sum(provincia.abitanti) as numeroAbitanti, sum(provincia.comuni) as numeroComuni, 
+round(sum(provincia.superficie)) as superficie, group_concat(provincia.sigla) as sigle from provincia 
+join regione on provincia.regione = regione.id group by regione.nome order by 2;
++-----------------------+-----------------+----------------+--------------+------------+-------------------------------------+
+| nome                  | numeroProvincie | numeroAbitanti | numeroComuni | superficie | sigle                               |
++-----------------------+-----------------+----------------+--------------+------------+-------------------------------------+
+| Valle d'Aosta         |               1 |         127065 |           74 |       3263 | AO                                  |
+| Basilicata            |               2 |         590601 |          131 |       9995 | MT,PZ                               |
+| Molise                |               2 |         320795 |          136 |       4438 | CB,IS                               |
+| Trentino-Alto Adige   |               2 |        1018657 |          339 |      13607 | BZ,TN                               |
+| Umbria                |               2 |         894222 |           92 |       8456 | PG,TR                               |
+| Abruzzo               |               4 |        1334675 |          305 |      10795 | CH,AQ,PE,TE                         |
+| Friuli-Venezia Giulia |               4 |        1230936 |          218 |       7856 | GO,PN,TS,UD                         |
+| Liguria               |               4 |        1615064 |          235 |       5420 | GE,IM,SP,SV                         |
+| Calabria              |               5 |        2008709 |          409 |      15081 | CZ,CS,KR,RC,VV                      |
+| Campania              |               5 |        5812962 |          551 |      13590 | AV,BN,CE,NA,SA                      |
+| Lazio                 |               5 |        5626710 |          378 |      17208 | RM,VT,FR,LT,RI                      |
+| Marche                |               5 |        1551377 |          239 |       9366 | AN,AP,FM,MC,PU                      |
+| Puglia                |               6 |        4079702 |          258 |      19366 | BA,BT,BR,FG,LE,TA                   |
+| Veneto                |               7 |        4885548 |          581 |      18391 | BL,PD,RO,TV,VE,VR,VI                |
+| Piemonte              |               8 |        4432571 |         1206 |      25400 | VC,AL,AT,BI,CN,NO,TO,VB             |
+| Sardegna              |               8 |        1671001 |          377 |      24090 | CA,CI,VS,NU,OG,OT,OR,SS             |
+| Emilia-Romagna        |               9 |        4356180 |          348 |      22451 | BO,FE,FC,MO,PR,PC,RA,RE,RN          |
+| Sicilia               |               9 |        5037799 |          390 |      25703 | CL,CT,EN,ME,PA,RG,SR,TP,AG          |
+| Toscana               |              10 |        3707818 |          287 |      22990 | PO,SI,AR,FI,GR,LI,LU,MS,PI,PT       |
+| Lombardia             |              12 |        9742676 |         1546 |      23863 | SO,VA,BG,BS,CO,CR,LC,LO,MN,MI,MB,PV |
++-----------------------+-----------------+----------------+--------------+------------+-------------------------------------+
+20 rows in set (0.00 sec)
+
+select regione.nome, count(*) as numeroProvincie, sum(provincia.abitanti) as numeroAbitanti, sum(provincia.comuni) as numeroComuni, 
+round(sum(provincia.superficie)) as superficie, group_concat(provincia.sigla) as sigle, 
+round(sum(provincia.abitanti)/sum(provincia.superficie),2) as densita from provincia 
+join regione on provincia.regione = regione.id group by regione.nome order by 7;
++-----------------------+-----------------+----------------+--------------+------------+-------------------------------------+---------+
+| nome                  | numeroProvincie | numeroAbitanti | numeroComuni | superficie | sigle                               | densita |
++-----------------------+-----------------+----------------+--------------+------------+-------------------------------------+---------+
+| Valle d'Aosta         |               1 |         127065 |           74 |       3263 | AO                                  |   38.94 |
+| Basilicata            |               2 |         590601 |          131 |       9995 | MT,PZ                               |   59.09 |
+| Sardegna              |               8 |        1671001 |          377 |      24090 | OG,OT,OR,SS,CA,CI,VS,NU             |   69.37 |
+| Molise                |               2 |         320795 |          136 |       4438 | CB,IS                               |   72.29 |
+| Trentino-Alto Adige   |               2 |        1018657 |          339 |      13607 | BZ,TN                               |   74.86 |
+| Umbria                |               2 |         894222 |           92 |       8456 | PG,TR                               |  105.75 |
+| Abruzzo               |               4 |        1334675 |          305 |      10795 | CH,AQ,PE,TE                         |  123.64 |
+| Calabria              |               5 |        2008709 |          409 |      15081 | CZ,CS,KR,RC,VV                      |  133.20 |
+| Friuli-Venezia Giulia |               4 |        1230936 |          218 |       7856 | GO,PN,TS,UD                         |  156.68 |
+| Toscana               |              10 |        3707818 |          287 |      22990 | PO,SI,AR,FI,GR,LI,LU,MS,PI,PT       |  161.28 |
+| Marche                |               5 |        1551377 |          239 |       9366 | MC,PU,AN,AP,FM                      |  165.64 |
+| Piemonte              |               8 |        4432571 |         1206 |      25400 | VC,AL,AT,BI,CN,NO,TO,VB             |  174.51 |
+| Emilia-Romagna        |               9 |        4356180 |          348 |      22451 | PC,RA,RE,RN,BO,FE,FC,MO,PR          |  194.03 |
+| Sicilia               |               9 |        5037799 |          390 |      25703 | RG,SR,TP,AG,CL,CT,EN,ME,PA          |  196.00 |
+| Puglia                |               6 |        4079702 |          258 |      19366 | BA,BT,BR,FG,LE,TA                   |  210.67 |
+| Veneto                |               7 |        4885548 |          581 |      18391 | VE,VR,VI,BL,PD,RO,TV                |  265.65 |
+| Liguria               |               4 |        1615064 |          235 |       5420 | GE,IM,SP,SV                         |  297.97 |
+| Lazio                 |               5 |        5626710 |          378 |      17208 | RM,VT,FR,LT,RI                      |  326.99 |
+| Lombardia             |              12 |        9742676 |         1546 |      23863 | LO,MN,MI,MB,PV,SO,BG,VA,BS,CO,CR,LC |  408.28 |
+| Campania              |               5 |        5812962 |          551 |      13590 | AV,BN,CE,NA,SA                      |  427.73 |
++-----------------------+-----------------+----------------+--------------+------------+-------------------------------------+---------+
+20 rows in set (0.01 sec)
+
+select utente.cognome as cognome, stazione.nome as stazione, accesso.dataora as passaggio, accesso.esito as esito from utente 
+join abbonamento on abbonamento.utente=utente.id 
+join accesso on accesso.abbonamento=abbonamento.id 
+join tornello on accesso.tornello=tornello.id 
+join stazione on tornello.stazione=stazione.id 
+where utente.id=7;
+
+select utente.cognome as cognome, count(*) from utente  join abbonamento on abbonamento.utente=utente.id  join accesso on accesso.abbonamento=abbonamento.id  join tornello on accesso.tornello=tornello.id  join stazione on tornello.stazione=stazione.id group by utente.cognome;
++------------+----------+
+| cognome    | count(*) |
++------------+----------+
+| Baroso     |     1680 |
+| Bellan     |     1680 |
+| Bosso      |     1680 |
+| Candeliere |     1680 |
+| Cocchia    |     1680 |
+| Cristiani  |     1680 |
+| Esposito   |     1680 |
+| Genoese    |     1680 |
+| Lutac      |     1680 |
+| MD         |     1680 |
+| Periale    |     3360 |
+| Santoli    |     1680 |
+| Tarzia     |     1680 |
+| Toselli    |     1680 |
+| Tosetti    |     1680 |
++------------+----------+
+15 rows in set (0.08 sec)
+
+select utente.cognome as cognome, count(*) from utente  join abbonamento on abbonamento.utente=utente.id  join accesso on accesso.abbonamento=abbonamento.id  join tornello on accesso.tornello=tornello.id  join stazione on tornello.stazione=stazione.id where accesso.esito=0 group by utente.id;
++------------+----------+
+| cognome    | count(*) |
++------------+----------+
+| Cristiani  |      478 |
+| Tosetti    |      478 |
+| Periale    |      519 |
+| Tarzia     |      441 |
+| MD         |      532 |
+| Esposito   |      503 |
+| Cocchia    |      522 |
+| Lutac      |      500 |
+| Santoli    |      501 |
+| Genoese    |      520 |
+| Baroso     |      505 |
+| Candeliere |      504 |
+| Bosso      |      507 |
+| Bellan     |      518 |
+| Toselli    |      483 |
+| Periale    |      475 |
++------------+----------+
+16 rows in set (0.00 sec)
+
+
+

@@ -1,0 +1,53 @@
+select nome, tornello.id from stazione join tornello on tornello.stazione=stazione.id;
+
+select nome as stazione, tornello.numero, tornello.id from stazione join tornello on tornello.stazione=stazione.id;
+
+select nome, cognome, abbonamento.dal, abbonamento.al from utente left join abbonamento on abbonamento.utente=utente.id order by cognome;
+
+select count(*) from abbonamento where abbonamento.id="6" and "2015-11-15" between dal and al;
++----------+
+| count(*) |
++----------+
+|        0 |
++----------+
+1 row in set (0.00 sec)
+
+select count(*) from abbonamento where abbonamento.id="6" and "2014-11-15" between dal and al;
++----------+
+| count(*) |
++----------+
+|        1 |
++----------+
+1 row in set (0.00 sec)
+
+select count(*) from accesso;
++----------+
+| count(*) |
++----------+
+|    26880 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select count(*) from accesso where esito=1;
++----------+
+| count(*) |
++----------+
+|    13428 |
++----------+
+1 row in set (0.00 sec)
+
+select count(*), sum(esito), 100*sum(esito)/count(*) from accesso;
++----------+------------+-------------------------+
+| count(*) | sum(esito) | 100*sum(esito)/count(*) |
++----------+------------+-------------------------+
+|    26880 |      18894 |                 70.2902 |
++----------+------------+-------------------------+
+1 row in set (0.02 sec)
+
+select count(*) from accesso join tornello on accesso.tornello = tornello.id where tornello.stazione=12;
++----------+
+| count(*) |
++----------+
+|     1280 |
++----------+
+1 row in set (0.03 sec)
