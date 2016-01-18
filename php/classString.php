@@ -58,18 +58,58 @@
 			
 			$arr= array();
 			
-			/*
+			$strPrimo= new MyString (substr($tempString->getString(),0,$num));
 			
+			$strSecondo= new MyString (substr($tempString->getString(),$num,strlen($tempString->getString())));
 			
+			$arr[0]= $strPrimo;
 			
+			$arr[1]= $strSecondo;
 			
+			return $arr;
 			
+		}
+		
+		
+		public function divStr(MyString $tempString, MyString $tempString2) {
 			
+			$arr= array();
 			
-			*/
+			if (strpos($tempString->getString(),$tempString2->getString()) > -1) {		
+				
+				$strPrimo= new MyString (substr($tempString->getString(),0,strpos($tempString->getString(),$tempString2->getString())));
+				
+				$strTerzo= new MyString (substr($tempString->getString(),strlen($tempString2->getString())+strlen($strPrimo->getString()),strlen($tempString->getString())));
+				
+				$arr[0]= $strPrimo;
+				
+				$arr[1]= $tempString2;
+				
+				$arr[2]= $strTerzo;
+				
+			}
 			
-			return $arr
+			else {
+				
+				echo "Stringa non contetuna nella stringa";
+				
+			}
 			
+			return $arr;
+			
+		}
+		
+		public function evidStr(MyString $tempString, MyString $tempString2, $arr) {
+			
+			if (strpos($tempString->getString(),$tempString2->getString()) > -1) {
+			
+				$strSecondo= new MyString("<b>".$tempString2->getString()."</b>");
+				
+				$arr[1]= $strSecondo;
+				
+			}
+			
+			return $arr;
 			
 		}
 		
