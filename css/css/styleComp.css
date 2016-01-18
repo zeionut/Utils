@@ -147,13 +147,71 @@ h3 {
 .containLeft {
 
 	text-align:justify;
+	float:left;
+	width:600px;
+	padding:10px 35px;
+	
+}
+
+.imgsx {
+
+	float:left;
+	padding: 2px 20px 10px 2px;
+	
+}
+
+.links {
+
+	margin-left:600px;
+	padding:10px 35px;
+	
+}
+
+.links li {
+
+	display:block;
+	background:url(../img/p.png) no-repeat left 6px;
+	padding: 0 0 10px 7px;
 
 }
 
+.links li a {
+	
+	text-decoration:none;
+	color:#008bce;
+	
+}
 
+.links li a:hover {
+	
+	text-decoration:underline;
+	color:##008bce;
+	
+}
 
+.footer {
 
+	padding:0 15px 0 20px;
+	border-top:solid 1px black;
+	text-align:center;
 
+}
+
+.footer a {
+
+	text-decoration:none;
+	color:#008bce;
+	font-size:12px;
+	
+}
+
+.footer a:hover {
+
+	text-decoration:underline;
+	color:#008bce;
+	font-size:12px;
+	
+}
 
 
 
