@@ -1,0 +1,77 @@
+// copia la struttura di una tabella in un altra tabella nuova tabella
+create table nomeTabella like db.nomeTabellaDaCopiare;
+
+// copia la struttura e datu di una tabella in un altra tabella nuova tabella (non copia le proprietà dei campi)
+create table nomeTabella as select * form db.nomeTabellaDaCopiare;
+
+// copia i dati di una tabella in un altra tabella
+inser into nomeTabella select * form db.nomeTabellaDaCopiare;
+
+
+// Creare un database
+create database nomeDatabase;
+
+// dare i permessi
+grant alla on nomeDatabase.* to nomeUtente@'%';
+
+// refresha i privilegi
+flush privileges;
+
+
+// eliminare una tabella
+drop table nomeTabella;
+
+
+// create una tabella:
+(primary key - chiave primaria)
+(auto_increment - il numero viene auto incrementato ad ogni inserimento di riga(record))
+(unsigned - il numero non ha segno)
+(not null - non può essere nullo, se non specificato inserisce un valore di default)
+(unique -  il valore del campo non può essere inserito una seconda volta nella stessa colonna)
+create table nomeTabella (
+	->id int primary key auto_increment unsigned not null, 
+	->campoStringa varchar(255) not null unique);
+
+
+// ti fa vedere come hai creato una tabella
+show create table nomeTabella;
+
+// modifica di una tabella
+alter table post add column titolo varchar(255) not null after id;
+
+// ottimizza la tabella distruggendola e riscreandola 
+optimize table post;
+
+// modificare un campo
+alter table post change errato errato time not null;
+alter table post change nomeColonna nuovoNomeColonna time not null;
+
+// cancellare una colonna
+alter table post change utente after id;
+
+// canella i record i una tabella delete (non resetta gli id ed è più lento), truncate (resetta gli id molto più veloce)
+delete from nomeTabella where 1;
+truncate table nomeTabella;
+
+
+// descrizione degli indici di una tabella
+show indexes from utente;
+show indexes from nomeTabella;
+
+// dare un indice ad un campo in una tabella
+alter table utente add index login(login);
+alter table utente add unique index login(login);
+alter table fanq add unique index postutente(post,utente);
+alter table nomeTabella add index nomeIndice(nomeCampo);
+alter table nomeTabella add unique index nomeIndice(nomeCampo);
+alter table nomeTabella add unique index nomeIndice(nomeCampo,nomeCampo);
+
+// cancellare un indice da un campo di una tabella
+alter table utente drop index login;
+alter table nomeTabella drop index nomeIndice;
+
+
+
+
+
+
