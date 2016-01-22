@@ -70,7 +70,12 @@ alter table nomeTabella add unique index nomeIndice(nomeCampo,nomeCampo);
 alter table utente drop index login;
 alter table nomeTabella drop index nomeIndice;
 
+// creare un indice che permette di fare ricerche nel testo
+alter table post add fulltext index testo(testo);
+alter table nomeTabella add fulltext index nomeIndice(nomeCampo);
 
+
+insert into utente(login,password) select login,password from soft2015.allievo;
 
 
 
