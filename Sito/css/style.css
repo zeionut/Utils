@@ -70,7 +70,6 @@ body {
 	list-style-type:none;
 	color:#ffffff;
 	width:100%;
-	/*text-align:center;*/
 	padding:17px 0 0 280px;
 	height:18px;
 	margin-bottom:5px;
@@ -81,6 +80,31 @@ body {
 
 	display:inline;
 	float:center;
+	
+}
+
+#navContainer ul li ul {
+
+	display:none;
+
+}
+
+#navContainer ul li:hover ul {
+
+	display:block;
+}
+
+#navContainer ul li ul li {
+
+	display:none;
+	top:10px;
+
+}
+
+#navContainer ul li ul li:hover {
+
+	display:none;
+	top:10px;
 
 }
 
@@ -107,7 +131,17 @@ body {
 #navContainer #active a {
 
 	text-decoration:none;
-	color:#ffffff;
+	color:black;
+	padding:17px 30px;
+	border-right: solid 1px #333333;
+	text-transform:uppercase;
+
+}
+
+#navContainer #active a:hover {
+
+	text-decoration:none;
+	color:red;
 	padding:17px 30px;
 	border-right: solid 1px #333333;
 	text-transform:uppercase;
