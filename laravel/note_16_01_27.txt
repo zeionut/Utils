@@ -1,0 +1,35 @@
+Larabel
+
+larabel/app/http/routes.php
+
+server per inseririre funzioni (funzioni in line "funzioni semplici" o accesso alle funzioni di classi)
+
+
+larabel/app/http/controllers/
+
+Qui si inseriscono le classi il file ha il nome della classe es:
+
+Hello.php
+
+	<?php
+
+		namespace App\Http\Controllers;
+
+		class Hello extends Controller {
+			
+		   public function helloClass () {
+				
+				return "Ciao";
+				
+			}
+			
+		   public function helloPara ($n) {
+				
+				return "Ciao " . $n;
+				
+			}
+
+		}
+    
+	?>
+

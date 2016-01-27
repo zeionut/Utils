@@ -1,0 +1,5 @@
+function Salutami() {
+	
+	alert("ciao");	
+	
+}
