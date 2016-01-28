@@ -1,0 +1,24 @@
+artisan
+
+crea automaticamente dei controller (nuovi controller) o delle rotte
+
+nella cartella di laravel
+php artisan list
+(per vedere l'help)
+
+crea dei controller 
+es.
+php artisan make:controller UserController
+
+Ti fa vedere le liste delle rotte
+php artisan router list
+
+
+-vista-
+-View Controller-
+
+si preoccupa di presentare i dati manipolati dal controller
+
+progetto/lista.blade.php
+
+

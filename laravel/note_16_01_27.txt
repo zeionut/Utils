@@ -1,5 +1,8 @@
 Larabel
 
+dopo l'installazione di laraverl dare da consol
+export PATH="~/.composer/vendor/bin:$PATH"
+
 larabel/app/http/routes.php
 
 server per inseririre funzioni (funzioni in line "funzioni semplici" o accesso alle funzioni di classi)
