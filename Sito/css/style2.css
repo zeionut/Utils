@@ -1,0 +1,48 @@
+ul {
+
+	list-style:none;
+	
+}
+
+.navigation li a {
+
+		width:130px;
+		background-color:CORAL;
+		float:left;
+		text-align:center;
+		text-decoration:none;
+		padding-top:17px;
+		padding-bottom:17px;
+		margin-left:5px;
+		list-style:none;
+		border:solid 1px CORAL;
+
+}
+
+.navigation li a:hover {
+
+	background-color:orange;
+	border:solid 1px black;
+
+}
+
+.navigation li:hover ul {
+
+	display:block;
+
+}
+
+.dropdown-nav {
+
+	position:absolute;
+	top:63px;
+	display:none;
+	left:556px;
+
+}
+
+.dropdown-nav li a{
+
+	margin-bottom:1px;
+
+}
