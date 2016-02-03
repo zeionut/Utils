@@ -1,6 +1,11 @@
+symfony/http-foundation
+installazione-->
+Symfony HttpFoundation Component
+
 Larabel
 
 dopo l'installazione di laraverl dare da consol
+./~/.composer/vendor/bin/laravel new nomeMioProgetto
 export PATH="~/.composer/vendor/bin:$PATH"
 
 larabel/app/http/routes.php
