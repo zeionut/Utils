@@ -95,6 +95,12 @@ body {
 
 }
 
+#active a {
+
+	border-top:solid 3px #808080
+
+}
+
 .navSot {
 
 	display:none;
