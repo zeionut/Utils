@@ -38,9 +38,14 @@ php artisan migrate:reset
 _________________________________________________________________________________
 
 php artisan make:migration create_articles_table --create="articles"
-correggere il file .env
+vai in create_articles_table e aggiungi i campi
+
+//correggere il file .env solo per verificare che stai usando sQlite
+
 php artisan migrate
+
 php artisan make:migration add_published_at_and_riassunto_to_articles_tables --table="articles"
+vai in add_published_at_and_riassunto_to_articles_tables e aggiungi i campi
 
 ->per modificare si fa il migrate:rollbank e si genera una nuova migrate...
 

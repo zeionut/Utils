@@ -1,0 +1,2 @@
+per usar un metodo POST su laravel inserire nella blade che gestice il form in POST
+{{ csrf_field() }}

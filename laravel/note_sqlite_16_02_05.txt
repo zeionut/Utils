@@ -1,0 +1,16 @@
+//creare una nuovo Modello --> MioDb
+$nuovo = new MioDb();
+
+//aggiun un parametro
+$nuovo->attributo="valore"
+
+//salvare il valore inserito prima
+$nuovo->save();
+
+$nuovo->find('id');
+
+//inserisce direttamente un nuovo record con i campi e i valori inseriti
+Article::create(['body'=>'ciao evrybody']);
+
+per le date su laravel usre Carbon
+con javascript usare Moment.js
