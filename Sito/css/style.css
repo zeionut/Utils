@@ -41,7 +41,7 @@ body {
 
 #navContainer {
 	
-	padding-left: 35%;
+	padding-left: 30%;
 	/*padding-left:	480px;*/
 	color: white;
 	list-style:	none;
@@ -91,7 +91,7 @@ body {
 .navSot {
 
 	display: none;
-	left: 41%;
+	left: 37%;
 	position: absolute;
 	top: 390px;
 	list-style: none;
@@ -101,7 +101,7 @@ body {
 
 .navSot li a {
 
-	margin: 10px 200px 10px 200px;
+	margin: 10px 400px 10px 200px;
 	padding: 10px 0 10px 0;
 	
 
