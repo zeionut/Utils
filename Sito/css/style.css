@@ -72,6 +72,7 @@ body {
 	text-decoration: none;
 	/*background: radial-gradient(#808080 20%, black 60%);*/
 	border-bottom: solid 3px #808080;
+	color: #666666;
 
 }
 
@@ -226,6 +227,12 @@ body {
 	font-size: 18px;	
 	color: #adc1eb;
 	text-decoration: none;
+	
+}
+
+.containRight ul li a:hover {
+	
+	color: #666666;
 	
 }
 
@@ -469,6 +476,115 @@ body {
 }
 
 /* end bioTemplate elements */
+
+/* beginning indCard elements */
+
+#indCard {
+	
+	margin-bottom: 30px;
+	
+}
+
+#indCard h2 {
+	
+	color: #3366cc;
+	padding: 10px 0 20px 0;	
+	margin-left: 50px;
+	
+}
+
+#indCard p {
+	
+	margin-left: 15px;	
+	
+}
+
+#indCard li {
+	
+	list-style: none;	
+	
+}
+
+#indCard a {
+	
+	color: #d6e0f5;
+	font-size: 16px;	
+	padding: 5px 0 5px 0;
+	text-decoration: none;
+}
+
+#indCard a:hover {
+	
+	color: #666666;
+	
+}
+
+
+/* end indCard elements */
+
+/* beginning card elements */
+
+#card {
+	
+	font-size: 12px;
+	color: #d6e0f5;
+	/*border: solid 1px red;*/
+	
+}
+
+#card h3 {
+	
+	color: #3366cc;
+	text-align: center;
+	font-size: 18px;
+	
+}
+
+#card div{
+	
+	padding: 10px;
+	border: solid 1px #d6e0f5;
+	height: 500px;
+	width: 450px;
+	margin: 10px;
+	
+}
+
+#card img {
+	
+	height: 160px;
+	width: auto;
+	
+}
+
+#card cardLeft {
+	
+	float: left;
+	
+}
+
+#card cardRight {
+	
+	float: right;
+	
+}
+
+#card p {
+
+	text-align: justify;
+	padding: 10px 35px 10px 35px;
+	/*border: solid 1px red;*/
+
+}
+
+#card b {
+
+	color: #adc1eb;
+	font-size: 14px;
+
+}
+
+/* end card elements */
 
 /* beginning footer elements */
 
