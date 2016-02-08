@@ -165,64 +165,76 @@ body {
 
 /* beginning home elements */
 
-.containLeft h2 {
+.containIntro h2 {
 	
 	color: #3366cc;
 	padding: 10px 0 20px 0;
 	
 }
 
-.containLeft {
+.containIntro {
 
 	text-align: justify;
-	float: left;
-	width: 40%;
+	/*float: left;*/
+	/*width: 40%;*/
 	padding: 10px 35px;
 	color: #d6e0f5;
 	/*border: solid 1px red;*/
 	
 }
 
-.imgsx {
+.imgIntro {
 
 	float: left;
 	padding: 2px 20px 10px 2px;
+	height: 150px;
+	width: auto;
 	
 }
 
-.containRight {
+.imgLink {
+
+	padding: 2px 2px 2px 2px;
+	margin-top: 110px;
+	height: 150px;
+	width: auto;
+	float: right;
+	
+}
+
+.containLink {
 
 	text-align: justify;
-	float: right;
-	width:40%;
+	/*float: right;*/
 	padding: 10px 35px;
 	/*border: solid 1px red;*/
 	
 }
 
-.containRight h2 {
+.containLink h2 {
 	
 	color: #3366cc;
-	padding: 10px 0 20px 0;
+	padding: 10px 0 20px 0;	
 	
 }
 
-.containRight ul {
+.containLink ul {
 
 	padding: 10px 35px;
 	margin-top: 20px;
 	/*border: solid 1px red;*/
 	list-style: none;
+	float: left;
 	
 }
 
-.containRight ul li {
+.containLink ul li {
 
 	margin-bottom: 20px;
 	
 }
 
-.containRight ul li a {
+.containLink ul li a {
 	
 	font-size: 18px;	
 	color: #adc1eb;
@@ -230,7 +242,7 @@ body {
 	
 }
 
-.containRight ul li a:hover {
+.containLink ul li a:hover {
 	
 	color: #666666;
 	
@@ -322,6 +334,12 @@ body {
 #containAll p {
 	
 	padding: 10px 0 20px 0;
+	
+}
+
+#containAll a:hover {
+	
+	color: #666666;
 	
 }
 
