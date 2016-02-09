@@ -196,6 +196,7 @@ body {
 
 	padding: 2px 2px 2px 2px;
 	margin-top: 110px;
+	margin-right: 25px;
 	height: 150px;
 	width: auto;
 	float: right;
@@ -337,7 +338,7 @@ body {
 	
 }
 
-#containAll a:hover {
+#containAll li a:hover {
 	
 	color: #666666;
 	
@@ -389,7 +390,7 @@ body {
 
 #containAll ul li a	 {
 	
-	color: #ffffff	;
+	color: #d6e0f5;
 	padding: 0 30px 15px 0;
 	/*margin-left: 35px;*/
 	font-size: 18px;
@@ -418,12 +419,19 @@ body {
 	
 }
 
-.upPage h3 a{
+.upPage h3 a {
 	
 	float: right;
-	color: #3366cc;
+	color: #adc1eb;
 	padding: 10px 0 20px 0;
 	text-decoration: none;
+	font-size: 16px;
+	
+}
+
+.upPage h3 a:hover {
+	
+	color: #666666;
 	
 }
 
@@ -500,14 +508,6 @@ body {
 #indCard {
 	
 	margin-bottom: 30px;
-	
-}
-
-#indCard h2 {
-	
-	color: #3366cc;
-	padding: 10px 0 20px 0;	
-	margin-left: 50px;
 	
 }
 
