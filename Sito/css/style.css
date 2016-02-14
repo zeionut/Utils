@@ -22,7 +22,7 @@ body {
 	height:	330px;
 	margin:	5px;
 	padding: 5px;
-	/*border:	solid 2px red;*/
+	/*border: solid 2px red;*/
 	background:	url(img/acqHeaderTx.jpg) no-repeat;
 	background-size: 950px auto;
 	background-position: center top;
@@ -246,6 +246,12 @@ body {
 	
 }
 
+#invForm table {
+
+	border-collapse: collapse;
+
+}
+	
 #invForm td {
 	
 	padding: 5px;
@@ -571,6 +577,12 @@ body {
 	
 }
 
+#card table {
+	
+	border-collapse: separate;
+	
+}
+
 #card cardLeft {
 	
 	float: left;
@@ -596,6 +608,22 @@ body {
 	color: #adc1eb;
 	font-size: 14px;
 
+}
+
+.upPageCenter a {
+	
+	text-align: center;
+	color: #adc1eb;
+	padding: 10px 0 20px 0;
+	text-decoration: none;
+	font-size: 16px;
+	
+}
+
+.upPageCenter a:hover {
+	
+	color: #666666;
+	
 }
 
 /* end card elements */
