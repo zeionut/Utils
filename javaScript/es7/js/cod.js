@@ -4,7 +4,7 @@ $().ready(function(){
 	var h2Item = $('h2');
 	var i = 0;
 	
-	$('#toggle').click(function(){ 
+	$('#toggle').click(function(){
 		
 		if (i == 0) {
 		
@@ -23,6 +23,8 @@ $().ready(function(){
 			h1Item.each(function(index, oldHtml){
 					
 					return oldHtml + ' rosso!';
+				
+			});
 			
 			i = 1;
 		
@@ -32,8 +34,8 @@ $().ready(function(){
 		//h2Item.toggleClass('red');
 		
 		
-		h1Item.toggleClass('green');		
-		h2Item.toggleClass('red');
+		h1Item.toggleClass("green");		
+		h2Item.toggleClass("red");
 		
 	});
 	
