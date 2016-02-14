@@ -263,6 +263,7 @@ body {
 	
 	padding: 5px;
 	color: #adc1eb;
+	text-align: right;
 	
 }
 
@@ -570,7 +571,7 @@ body {
 	
 	padding: 10px;
 	border: solid 1px #d6e0f5;
-	height: 500px;
+	height: 520px;
 	width: 450px;
 	margin: 10px;
 	
