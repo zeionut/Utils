@@ -1,0 +1,14 @@
+html, body {
+	
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	background-color: #e5e5e5;
+
+}
+
+.margin-top-15 {
+
+	margin-top: 15px;
+	
+}
