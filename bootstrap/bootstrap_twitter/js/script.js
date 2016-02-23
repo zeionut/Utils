@@ -14,38 +14,35 @@ $(document).ready(function(){
 			
 		});
 		
-		if (countAr > 1) {
+		if (countAr < 1 || countAr > 140) {
 			
-			$('#postBot').innerHTML = '<a id="postBot" href="#" class="form-control btn btn-info"">Post</a>';
+			$('#postBot').attr('disabled', true);
 			
-			});
+		}
+		
+		else {
 			
-		};
+			$('#postBot').attr('disabled', false);
+			
+		}
 		
 	});
 	
-	/**
-			// Disable by default
-		$('#send-message-button').prop('disabled', true);
-
-		// Do stuff when there is textarea activity
-		$('#message-input-field').on("propertychange input textInput", function () {
-			var charLimit = 140;
-			var remaining = charLimit - $(this).val().length;
-			if(remaining == charLimit) {
-				console.log("disabling");
-				// No characters entered so disable the button
-				$('#send-message-button').attr('disabled', true);
-			} if (remaining < 0) {
-				// remaining = 0; // Prevents the counter going into negative numbers
-				$('#counter').addClass("over-char-limit").text(remaining);
-				$('#send-message-button').attr('disabled', true);
-			} else {
-				$('#send-message-button').removeAttr('disabled');
-				$('#counter').removeClass("over-char-limit").text(remaining);
-			}
+	$('#postBot').click(function(){
+			
+		$('#over').prepend('<div class="margin-top-15 col-md-12 well word-wrap"><p>' + $('#textAr').val() + '</p></div>');
+				
+		countAr = $('#textAr').val('').length - 1;
+				
+		$('#count').html(function(index, oldHtml){
+				
+			return '<p id="count">' + (texMax-countAr) + '</p>';
+				
 		});
- 
-		**/
+				
+		$('#postBot').attr('disabled', true);
+				
+				
+		});
 
 });
