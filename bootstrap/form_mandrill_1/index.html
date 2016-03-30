@@ -37,7 +37,7 @@
 			
 				<div class="col-md-3 col-md-offset-1">
 					
-					<form id="form-send-mail">
+					<form id="form-send-mail" method="POST">
 					  <div class="form-group">
 						<input type="text" class="form-control" id="inputName" placeholder="Name" required>
 					  </div>
@@ -50,9 +50,13 @@
 						<input type="email" class="form-control" id="inputEmail" placeholder="simple@domail.com" required>
 					  </div>
 					  
+					  <div id="mailValid"></div>
+					  
 					  <div class="form-group">
 						<input type="tel" class="form-control" id="inputNumber" placeholder="Telephon number" required>
 					  </div>
+					  
+					 <div id="numberValid"></div>
 					  
 					  <div class="form-group">
 						<input type="text" class="form-control" id="inpitCompany" placeholder="Company" required>
@@ -63,6 +67,7 @@
 					  </div>
 					  
 					  <button type="submit" class="btn btn-warning" id="subnitButton">Submit</button>
+					  <!-- <a href="#"class="btn btn-warning" id="subnitButton">Submit</a> -->
 					  
 					</form>
 					

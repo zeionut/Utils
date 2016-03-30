@@ -1,0 +1,41 @@
+// Accesso a MySql
+
+sudo /opt/lampp/lampp start
+
+mysql -h 127.0.0.1 -u root
+
+// Accesso al db di ubuntu
+mysql -h 127.0.0.1 -u root -P 9918
+
+// Creare un db
+create database `mar21`default charset=utf8;
+
+// Creare un nuovo utente
+grant all on `mar21`.* `nomeutente`@`localhost` identified by `pwd`;
+
+// Scegli il db
+use mar21
+
+// Creare una tabella "persona"
+create table `persona` (
+	id integer auto_increment primary key, 
+	nome varchar(255), 
+	cognome varchar(255), 
+	codice_fiscale char(16), 
+	note text default null) Engine=InnoDB;
+
+// Modificare una tabella
+alter table persona change cosgnome cognome varchar(255);
+
+// Creare una tabella con riferimento ad una altra tabella
+create table `carrello` (
+	id integer auto_increment primary key, 
+	date_time datetime not null, 
+	id_persona integer, 
+	constraint foreign key (id_persona) references persona(id)) Engine=InnoDB;
+
+// Inserire un nuovo record
+insert into persona values(null, "filippo", "mio", "1234567890123456", "campo di testo fiorito");
+
+
+
