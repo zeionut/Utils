@@ -37,5 +37,8 @@ create table `carrello` (
 // Inserire un nuovo record
 insert into persona values(null, "filippo", "mio", "1234567890123456", "campo di testo fiorito");
 
+// Andare sulla cartella del progetto e lanciare il comando
+mysql -h 127.0.0.1 -u root < database.sql
+
 
 
